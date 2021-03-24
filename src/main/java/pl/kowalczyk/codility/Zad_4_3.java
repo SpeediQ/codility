@@ -7,32 +7,38 @@ public class Zad_4_3 {
 //    Task Score = 77% (Correctness 100% ; Performance 60%) - to do: 100/100
 
     public static void main(String[] args) {
-        int[] A = {3, 4, 4, 6, 1, 4, 4};
-        System.out.println(Arrays.toString(solution(5, A)));
+        int[] A = {2, 3, 6, 5, 4, 8};
+        System.out.println(solution(A));
     }
 
 
-    public static int[] solution(int N, int[] A) {
-        int maxValue = 0;
-        int specialValue_setMaxValue = N + 1;
-        int index;
-        int[] solutionArray = new int[N];
+    public static int solution(int[] A) {
+        Arrays.sort(A);
+        int previousValue = Integer.MIN_VALUE;
+        boolean moreThenZero = false;
+        if (A[0] > 1) {
+            return 1;
+        }
+
         for (int i = 0; i < A.length; i++) {
-            if (A[i] != specialValue_setMaxValue) {
-                index = A[i]-1;
-                solutionArray[index]++;
-                if (solutionArray[index] > maxValue) {
-                    maxValue = solutionArray[index];
+            if (A[i] > 0 && !moreThenZero) {
+                previousValue = A[i];
+                moreThenZero = true;
+                if (A[i] == 1 && i == A.length - 1) {
+                    return A[i] + 1;
                 }
 
-            } else {
-                for (int j = 0; j < N ; j++) {
-                    solutionArray[j] = maxValue;
+            } else if (A[i] > 0) {
+                if (A[i] - previousValue > 1) {
+                    return previousValue + 1;
+                } else if (i == A.length - 1) {
+                    return A[i] + 1;
                 }
+
+                previousValue = A[i];
             }
         }
-        return solutionArray;
 
-
+        return 1;
     }
 }
