@@ -15,24 +15,26 @@ public class Zad_5_4 {
         int countWest = 0;
         int countEast = 0;
 
-        int pair = 0;
+        int pairs = 0;
         int counter = 0;
 
 
         for (int i = A.length - 1; i >= 0; i--) {
             counter++;
             if (A[i] == 1) {
+
                 countWest++;
+
             } else if (A[i] == 0) {
                 countEast++;
-                pair += counter - countEast;
-                if (pair > 1000000000) {
+                pairs += counter - countEast;
+                if (pairs > 1000000000) {
                     return -1;
                 }
             }
         }
 
-        return pair;
+        return pairs;
     }
 
 
