@@ -14,7 +14,7 @@ public class Zad_6_4 {
     }
 
     public static int solution(int[] A) {
-       return 0;g
+       return 0;
     }
 
 
