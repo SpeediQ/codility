@@ -2,6 +2,7 @@ package pl.kowalczyk.codility;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.Stack;
 
 public class Zad_7_1 {
     public static void main(String[] args) {
@@ -13,7 +14,8 @@ public class Zad_7_1 {
     }
 
     public static int solution(String S) {
-        Deque<Character> stack = new ArrayDeque<Character>();
+//        Deque<Character> stack = new ArrayDeque<Character>();
+        Stack<Character> stack = new Stack<Character>();
         char lestChar;
 
 
