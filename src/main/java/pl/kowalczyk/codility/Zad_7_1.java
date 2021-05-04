@@ -6,6 +6,9 @@ import java.util.Deque;
 public class Zad_7_1 {
     public static void main(String[] args) {
         System.out.println(solution("{{{{"));
+        System.out.println(solution("{([][])}"));
+        System.out.println(solution("{[()()][()]}"));
+        System.out.println(solution("{[(12332112)(42343243)][(312321)]}"));
 
     }
 
