@@ -24,15 +24,15 @@ public class Zad_7_2 {
         int count = A.length;
 
         for (int i = 0; i < A.length; i++) {
-            if (B[i]==1){
+            if (B[i] == 1) {
                 stack.push(A[i]);
-            }
-            if (B[i]==0){
-                while (!stack.isEmpty()){
-                    if (stack.peek()>A[i]){
+                continue;
+            } else {
+                while (!stack.isEmpty()) {
+                    if (stack.peek() > A[i]) {
                         count--;
                         break;
-                    } else if(stack.peek()<A[i]){
+                    } else if (stack.peek() < A[i]) {
                         count--;
                         stack.pop();
                     }
@@ -42,7 +42,6 @@ public class Zad_7_2 {
 
         }
 
-        // write your code in Java SE 8
         return count;
     }
 
