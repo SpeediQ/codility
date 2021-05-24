@@ -1,14 +1,12 @@
 package pl.kowalczyk.codility.exercise.sorting;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
-public class Run_sorting {
+public class Run_funWithStreamAndSort {
 
     public static void main(String[] args) {
-        List<Person> people = createPeople();
+        List<Person> people = generateListOfPeople();
         System.out.println(people);
 
         people.sort(Comparator.comparing(Person::getName));
@@ -30,7 +28,7 @@ public class Run_sorting {
         });
         System.out.println("v1: " + people);
         System.out.println("Reset the list");
-        people = createPeople();
+        people = generateListOfPeople();
         System.out.println(people);
 
         people.sort((o1, o2) -> {
@@ -48,14 +46,14 @@ public class Run_sorting {
         System.out.println("v2: " + people);
 
         System.out.println("Reset the list");
-        people = createPeople();
+        people = generateListOfPeople();
         System.out.println(people);
 
         people.stream()
                 .filter(name -> name.getName().length() == 8)
                 .forEach(System.out::println);
 
-        List<Person> nextList = createPeople();
+        List<Person> nextList = generateListOfPeople();
         nextList.stream()
                 .filter(a -> a.getAge() >= 18)
                 .map(s -> {
@@ -65,18 +63,31 @@ public class Run_sorting {
                     return "Chłopak: " + s.getName();
                 })
                 .forEach(System.out::println);
+        System.out.println("---------List with coma----------");
+        List<Person> people_withComa = generateListOfPeople();
+        Set<Person> a1 = generateListOfPeople().stream()
+                .filter(a -> a.getName().endsWith("a"))
+                .collect(Collectors.toSet());
+
+        System.out.println("---------Array----------");
+        int[] peopleArray = generateNumbers();
+        System.out.println(Arrays.stream(peopleArray)
+                .filter(s -> s >= 100)
+                .count());
+
 
     }
 
 
-    public static List<Person> createPeople() {
-        List<Person> people = new ArrayList<>(12);
+    private static List<Person> generateListOfPeople() {
+        List<Person> people = new ArrayList<>();
         people.add(new Person("Marcin", "Kowalczyk", 29));
         people.add(new Person("Marcin", "Wojtyła", 30));
         people.add(new Person("Wojtek", "Pilch", 21));
         people.add(new Person("Konrad", "Pilch", 19));
         people.add(new Person("Alicja", "Łukaszenko", 28));
         people.add(new Person("Lucjan", "Ponitowski", 29));
+        people.add(new Person("Weronika", "Ameba", 26));
         people.add(new Person("Weronika", "Ameba", 26));
         people.add(new Person("Weronika", "Botsa", 43));
         people.add(new Person("Weronika", "Botsa", 41));
@@ -85,6 +96,10 @@ public class Run_sorting {
         people.add(new Person("Łukasz", "Piłotwarczyk", 48));
 
         return people;
+    }
+
+    private static int[] generateNumbers() {
+        return new int[]{1, 5, 3, 6, 4, 8, 9, 10, 2156, 12, 320, 156, 12};
     }
 
 
