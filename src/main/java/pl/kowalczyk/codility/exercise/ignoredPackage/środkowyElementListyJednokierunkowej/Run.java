@@ -1,4 +1,4 @@
-package pl.kowalczyk.codility.exercise.myLists.środkowyElementListyJednokierunkowej;
+package pl.kowalczyk.codility.exercise.ignoredPackage.środkowyElementListyJednokierunkowej;
 
 public class Run {
 

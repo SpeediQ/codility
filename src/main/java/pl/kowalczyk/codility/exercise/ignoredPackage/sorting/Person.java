@@ -1,4 +1,4 @@
-package pl.kowalczyk.codility.exercise.sorting;
+package pl.kowalczyk.codility.exercise.ignoredPackage.sorting;
 
 public class Person {
 

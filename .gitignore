@@ -1,5 +1,6 @@
 HELP.md
 target/
+pl.kowalczyk.codility.exercise.ignoredPackage
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -31,3 +32,4 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/java/pl/kowalczyk/codility/exercise/ignoredPackage/
