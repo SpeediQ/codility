@@ -1,4 +1,4 @@
-package pl.kowalczyk.codility.exercise.lesson10;
+package pl.kowalczyk.codility.lesson10;
 
 public class MinPerimeterRectangle {
 

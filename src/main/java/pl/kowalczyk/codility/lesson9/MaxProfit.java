@@ -1,4 +1,4 @@
-package pl.kowalczyk.codility.exercise.lesson9;
+package pl.kowalczyk.codility.lesson9;
 
 import java.util.Arrays;
 
